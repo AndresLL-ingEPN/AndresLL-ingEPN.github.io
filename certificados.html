@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Certificados — Andrés Llumiquinga</title>
+  <meta name="description" content="Galería de certificados y cursos verificados de Andrés Llumiquinga." />
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- (Opcional) Datos estructurados mínimos -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Certificados — Andrés Llumiquinga",
+    "about": "Certificaciones y cursos completados con enlaces verificables."
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ====== SELECTOR DE IDIOMA ====== -->
+  <div class="language-switcher">
+    <button class="lang-btn active" data-lang="es" aria-label="Cambiar a Español">
+      <span data-i18n="lang.spanish">Español</span>
+    </button>
+    <button class="lang-btn" data-lang="en" aria-label="Switch to English">
+      <span data-i18n="lang.english">English</span>
+    </button>
+  </div>
+
+  <main class="container">
+    <header class="header">
+      <div class="identity">
+        <h1 data-i18n="cert.page.title">Certificados</h1>
+        <p class="role" data-i18n="cert.page.subtitle">Evidencias de certificaciones y cursos</p>
+      </div>
+      <div class="contact">
+        <!-- CAMBIAR: Usa los mismos datos de contacto que en tu CV -->
+        <p><strong data-i18n="header.email">Correo:</strong> <a href="mailto:andres.llumiquinga@outlook.com">andres.llumiquinga@outlook.com</a></p>
+        <p><strong data-i18n="header.city">Ciudad:</strong> <span data-i18n="header.location">Quito, Ecuador</span></p>
+      </div>
+      <!-- CAMBIAR: Actualiza la fecha cada vez que agregues o edites certificados -->
+      <p class="last-update"><span data-i18n="header.lastupdate">Última actualización:</span> <time datetime="2026-01-13">13/01/2026</time></p>
+    </header>
+
+    <!-- ====== Filtros (por tipo de certificado) ====== -->
+    <section class="section">
+      <h2 data-i18n="cert.section.filter">Filtrar por categoría</h2>
+      <!-- CAMBIAR: Si agregas nuevos tipos, añade nuevos botones aquí -->
+      <div class="filters">
+        <button class="filter-btn is-active" data-filter="all" data-i18n="cert.filter.all">Todos</button>
+        <button class="filter-btn" data-filter="azure" data-i18n="cert.filter.azure">Azure</button>
+        <button class="filter-btn" data-filter="stratio" data-i18n="cert.filter.stratio">Stratio</button>
+        <button class="filter-btn" data-filter="qa" data-i18n="cert.filter.qa">QA / Testing</button>
+        <button class="filter-btn" data-filter="curso" data-i18n="cert.filter.curso">Cursos</button>
+      </div>
+    </section>
+
+    <!-- ====== Galería de certificados ====== -->
+    <section class="section">
+      <h2 data-i18n="cert.section.gallery">Galería</h2>
+
+      <!-- INSTRUCCIONES:
+           - Cada certificado es una .card con data-type (azure/stratio/qa/curso).
+           - "Ver certificado" apunta a una imagen PNG/JPG o PDF alojado en /certificados/.
+           - "Ver credencial" apunta a una URL pública de verificación (si existe).
+           - DUPLICA una .card para añadir nuevos certificados y actualiza sus campos.
+      -->
+      <div class="cert-grid">
+
+        <!-- ====== Azure Fundamentals (AZ-900) ====== -->
+        <article class="card" data-type="azure" data-preview="certificados/Azure_Fundamentals.png">
+          <div class="card-header">
+            <div class="card-icon">🏆</div>
+            <div class="card-title">Azure AZ-900</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.name.azure.az900">Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
+            <div class="cert-details">
+              <span>Emitido: 18/01/2024</span>
+              <span>• Emisor: Microsoft</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(0)">👁️ Vista previa</button>
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/AndrsLlumiquinga-0474/CB95FB937F944514?sharingId=1D62080FF6265234" class="btn btn-credential" data-i18n="cert.btn.credential" target="_blank">🔗 Credencial</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Azure Data Fundamentals (DP-900) ====== -->
+        <article class="card" data-type="azure" data-preview="certificados/Azure_Data_Fundamentals.png">
+          <div class="card-header">
+            <div class="card-icon">🏆</div>
+            <div class="card-title">Azure DP-900</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.name.azure.dp900">Microsoft Certified: Azure Data Fundamentals (DP-900)</h3>
+            <div class="cert-details">
+              <span>Emitido: 26/08/2024</span>
+              <span>• Emisor: Microsoft</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(1)">👁️ Vista previa</button>
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/AndrsLlumiquinga-0474/4CFB6219420DA945?sharingId=1D62080FF6265234" class="btn btn-credential" data-i18n="cert.btn.credential" target="_blank">🔗 Credencial</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Azure AI Fundamentals (AI-900) ====== -->
+        <article class="card" data-type="azure" data-preview="certificados/Azure_AI_Fundamentals.png">
+          <div class="card-header">
+            <div class="card-icon">🏆</div>
+            <div class="card-title">Azure AI-900</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.name.azure.ai900">Microsoft Certified: Azure AI Fundamentals (AI-900)</h3>
+            <div class="cert-details">
+              <span>Emitido: 02/09/2024</span>
+              <span>• Emisor: Microsoft</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(2)">👁️ Vista previa</button>
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/AndrsLlumiquinga-0474/6985F5F9E662E375?sharingId=1D62080FF6265234" class="btn btn-credential" data-i18n="cert.btn.credential" target="_blank">🔗 Credencial</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Stratio Data Fabric Basics v14.1 ====== -->
+        <article class="card" data-type="stratio" data-preview="certificados/Data_Fabric_Basics.png">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <div class="card-title">Stratio Data Fabric</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.name.stratio.fabric">Stratio Generative AI Data Fabric Basics (v14.1)</h3>
+            <div class="cert-details">
+              <span>Emitido: 07/01/2025</span>
+              <span>• Emisor: Stratio Big Data Inc.</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(3)">👁️ Vista previa</button>
+              <a href="certificados/Data_Fabric_Basics.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Stratio_Data_Fabric_Basics_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Stratio Data Governance v16.1 ====== -->
+        <article class="card" data-type="stratio" data-preview="certificados/Ejemplo_governance.png">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <div class="card-title">Stratio Governance</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.name.stratio.governance">Stratio Generative AI Data Governance Certification (14.6)</h3>
+            <div class="cert-details">
+              <span>Emitido: 13/01/2026</span>
+              <span>• Emisor: Stratio Big Data Inc.</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(4)">👁️ Vista previa</button>
+              <a href="certificados/Governance_allumiqu_stratio.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Stratio_Governance_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Stratio Data Processing v14.1 ====== -->
+        <article class="card" data-type="stratio" data-preview="certificados/DATA_PROCESING.png">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <div class="card-title">Stratio Data Processing</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.name.stratio.processing">Stratio Generative AI Data Processing (v14.1)</h3>
+            <div class="cert-details">
+              <span>Emitido: 15/01/2025</span>
+              <span>• Emisor: Stratio Big Data Inc.</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(5)">👁️ Vista previa</button>
+              <a href="certificados/DATA_PROCESING.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Stratio_Data_Processing_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Diplomado U. Hemisferios ====== -->
+        <article class="card" data-type="curso" data-preview="certificados/Diplomado_Hemisferios.png">
+          <div class="card-header">
+            <div class="card-icon">📚</div>
+            <div class="card-title">Diplomado DS</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.name.diplomado">Diplomado: Data Science &amp; Business Analytics (90h)</h3>
+            <div class="cert-details">
+              <span>27/05/2024 – 09/07/2024</span>
+              <span>• Emisor: Universidad de los Hemisferios</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(6)">👁️ Vista previa</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== CTFL / QA ====== -->
+        <article class="card" data-type="qa" data-preview="certificados/UsabilidadAccesibilidad.png">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <div class="card-title">Usabilidad y Accesibilidad</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.usability">Introducción a las Pruebas de Usabilidad, UX y Accesibilidad</h3>
+            <div class="cert-details">
+              <span>Emitido: 01/12/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(7)">👁️ Vista previa</button>
+              <a href="certificados/UsabilidadAccesibilidad.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Usabilidad_Accesibilidad_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-type="qa" data-preview="certificados/TestingExploratorio.png">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <div class="card-title">Test exploratorio</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.exploratory">Testing exploratorio para agilizar tus pruebas</h3>
+            <div class="cert-details">
+              <span>Emitido: 02/12/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(9)">👁️ Vista previa</button>
+              <a href="certificados/TestingExploratorio.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Testing_Exploratorio_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-type="qa" data-preview="certificados/AutomatizacionserenityBdd.png">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <div class="card-title">Serenity BDD</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.serenity">Automatización de pruebas web con Serenity BDD y Java</h3>
+            <div class="cert-details">
+              <span>Emitido: 02/12/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(10)">👁️ Vista previa</button>
+              <a href="certificados/AutomatizacionserenityBdd.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Automatizacion_Serenity_BDD_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-type="qa" data-preview="certificados/Software_Testing_Cero.png">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <div class="card-title">Software Testing</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.softtesting">Software Testing desde Cero</h3>
+            <div class="cert-details">
+              <span>Emitido: 21/02/2022</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(11)">👁️ Vista previa</button>
+              <a href="certificados/Software_Testing_Cero.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Software_Testing_Desde_Cero_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+        <!-- ====== Curso: Certified Tester ISTQB Foundation Level (CTFL) 16 (Udemy) ====== -->
+        <article class="card" data-type="qa" data-preview="certificados/istqb.png">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <div class="card-title">CTFL</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.ctfl">Certified Tester ISTQB Foundation Level (CTFL)</h3>
+            <div class="cert-details">
+              <span>Emitido: 25/03/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(16)">👁️ Vista previa</button>
+              <a href="certificados/istqb.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Certified_Tester_ISTQB_Foundation_Level_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: KARATE 17 (Udemy) ====== -->
+        <article class="card" data-type="qa" data-preview="certificados/karate.png">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <div class="card-title">KARATE</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.karate">Karate DSL: API Automation and Performance from Zero to Hero</h3>
+            <div class="cert-details">
+              <span>Emitido: 09/03/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(17)">👁️ Vista previa</button>
+              <a href="certificados/karate.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Karate_DSL_API_Automation_and_Performance_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: K& 18 (Udemy) ====== -->
+        <article class="card" data-type="qa" data-preview="certificados/k6.png">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <div class="card-title">K6</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.k6">K6: Pruebas de Rendimiento y Carga para Principiantes</h3>
+            <div class="cert-details">
+              <span>Emitido: 24/04/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(18)">👁️ Vista previa</button>
+              <a href="certificados/k6.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="K6_Performance_and_Load_Testing_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: Strategy Implementation (Coursera) ====== -->
+        <article class="card" data-type="curso" data-preview="certificados/StrategyImplementation.png">
+          <div class="card-header">
+            <div class="card-icon">🗂️</div>
+            <div class="card-title">Implementacion de Estrategia</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.strategy">Strategy Implementation (6h)</h3>
+            <div class="cert-details">
+              <span>Emitido: 29/06/2020</span>
+              <span>• Emisor: Coursera</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(8)">👁️ Vista previa</button>
+              <a href="certificados/StrategyImplementation.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Strategy_Implementation_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: Getting Started with Power BI Desktop (Coursera) 19====== -->
+        <article class="card" data-type="curso" data-preview="certificados/PowerBI.png">
+          <div class="card-header">
+            <div class="card-icon">🗂️</div>
+            <div class="card-title">POWER BI</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.powerbi">Getting Started with Power BI Desktop (8h)</h3>
+            <div class="cert-details">
+              <span>Emitido: 06/07/2020</span>
+              <span>• Emisor: Coursera</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(19)">👁️ Vista previa</button>
+              <a href="certificados/PowerBI.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="PowerBI_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: Create Interactive Dashboards with Streamlit and Python (Coursera) 20====== -->
+        <article class="card" data-type="curso" data-preview="certificados/StreamlitPython.png">
+          <div class="card-header">
+            <div class="card-icon">🗂️</div>
+            <div class="card-title">Dashboards con Streamlit y Python</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.streamlit">Create Interactive Dashboards with Streamlit and Python (12h)</h3>
+            <div class="cert-details">
+              <span>Emitido: 07/09/2020</span>
+              <span>• Emisor: Coursera</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(20)">👁️ Vista previa</button>
+              <a href="certificados/StreamlitPython.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="Streamlit_Python_Certificate.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: DEVOPS (Udemy) ====== -->
+        <article class="card" data-type="curso" data-preview="certificados/DevOps.png">
+          <div class="card-header">
+            <div class="card-icon">☁️</div>
+            <div class="card-title">DevOps</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.devops">DevOps con Docker, Jenkins, Kubernetes, git, GitFlow CI y CD — Udemy (14h)</h3>
+            <div class="cert-details">
+              <span>Emitido: 08/05/2023</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(12)">👁️ Vista previa</button>
+              <a href="certificados/DEVOPS.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="DEVOPS.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: SQL Principiantes (Udemy) ====== -->
+        <article class="card" data-type="curso" data-preview="certificados/SQLBeginner.png">
+          <div class="card-header">
+            <div class="card-icon">🗄️</div>
+            <div class="card-title">SQL</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.sql">SQL para Principiantes — Udemy (5h)</h3>
+            <div class="cert-details">
+              <span>Emitido: 01/12/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(13)">👁️ Vista previa</button>
+              <a href="certificados/SQLBeginner.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="SQL_Principiantes.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: AKS (Udemy) ====== -->
+        <article class="card" data-type="curso" data-preview="certificados/AKS.png">
+          <div class="card-header">
+            <div class="card-icon">☁️</div>
+            <div class="card-title">AKS</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.aks">Azure Kubernetes Service (AKS) Todo sobre AKS — Udemy (6.5h)</h3>
+            <div class="cert-details">
+              <span>Emitido: 29/12/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(14)">👁️ Vista previa</button>
+              <a href="certificados/AKS.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="AKS.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Curso: UML (Udemy) ====== -->
+        <article class="card" data-type="curso" data-preview="certificados/UML.png">
+          <div class="card-header">
+            <div class="card-icon">📁</div>
+            <div class="card-title">UML</div>
+          </div>
+          <div class="card-body">
+            <h3 class="cert-name" data-i18n="cert.fullname.uml">Introduccion a UML, Lenguaje Unificado de Modelado — Udemy (2.5h)</h3>
+            <div class="cert-details">
+              <span>Emitido: 29/12/2025</span>
+              <span>• Emisor: Udemy</span>
+            </div>
+            <div class="card-buttons">
+              <button class="btn btn-preview" data-i18n="cert.btn.preview" onclick="openLightbox(15)">👁️ Vista previa</button>
+              <a href="certificados/UML.pdf" class="btn btn-credential" data-i18n="cert.btn.download" download="UML.pdf">📥 Descargar PDF</a>
+            </div>
+          </div>
+        </article>
+
+
+      </div> <!-- /.cert-grid -->
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year">2025</span> Andrés Mauricio Llumiquinga Guamba — <span data-i18n="cert.footer.title">Certificados</span>.</p>
+      <p><a href="index.html" class="btn-link" data-i18n="cert.footer.back">← Volver al CV</a></p>
+    </footer>
+  </main>
+
+  <!-- ====== MODAL LIGHTBOX ====== -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <span class="prev-btn" onclick="changeImage(-1); event.stopPropagation();">&#10094;</span>
+    <span class="next-btn" onclick="changeImage(1); event.stopPropagation();">&#10095;</span>
+      <div class="lightbox-content" onclick="event.stopPropagation();">
+      <div id="lightbox-media" class="lightbox-media" aria-live="polite"></div>
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-meta"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script src="js/i18n.js"></script>
+  <script src="js/certificados.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Título Universitario — Andrés Llumiquinga</title>
+  <meta name="description" content="Título de Ingeniería en Software de la Escuela Politécnica Nacional" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- ====== SELECTOR DE IDIOMA ====== -->
+  <div class="language-switcher">
+    <button class="lang-btn active" data-lang="es" aria-label="Cambiar a Español">
+      <span data-i18n="lang.spanish">Español</span>
+    </button>
+    <button class="lang-btn" data-lang="en" aria-label="Switch to English">
+      <span data-i18n="lang.english">English</span>
+    </button>
+  </div>
+
+  <main class="container">
+    <header class="header">
+      <div class="identity">
+        <h1 data-i18n="titulo.page.title">Título Universitario</h1>
+        <p class="role" data-i18n="titulo.page.subtitle">Ingeniería en Software — Escuela Politécnica Nacional</p>
+      </div>
+      <p class="last-update"><span data-i18n="titulo.graduation">Fecha de graduación:</span> <time datetime="2022-11-17">17/11/2022</time></p>
+    </header>
+
+    <section class="section">
+      <h2 data-i18n="titulo.section.title">Documento</h2>
+      
+      <div class="actions">
+        <a href="index.html" class="btn-back" aria-label="Volver a la página del CV" data-i18n="titulo.btn.back">← Volver al CV</a>
+        <a href="titulo/titulo_EPN.pdf" class="download-link" download="Titulo_Ingenieria_Software_EPN.pdf" aria-label="Descargar título en formato PDF" data-i18n="titulo.btn.download">📥 Descargar PDF</a>
+      </div>
+
+      <div class="pdf-container">
+        <iframe src="titulo/titulo_EPN.pdf" type="application/pdf" title="Visualizador de Título Universitario - Ingeniería en Software EPN">
+          <p>Tu navegador no puede mostrar el PDF. 
+            <a href="titulo/titulo_EPN.pdf" download="Titulo_Ingenieria_Software_EPN.pdf">Descarga el archivo aquí</a>.
+          </p>
+        </iframe>
+      </div>
+
+      <div class="actions">
+        <a href="index.html" class="btn-back" aria-label="Volver a la página del CV" data-i18n="titulo.btn.back">← Volver al CV</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year">2025</span> Andrés Mauricio Llumiquinga Guamba</p>
+    </footer>
+  </main>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script src="js/i18n.js"></script>
+  <script src="js/titulo.js"></script>
+</body>
+</html>
