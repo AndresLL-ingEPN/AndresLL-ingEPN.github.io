@@ -1,122 +1,13 @@
 (function(){
+  // Cache para almacenar el contenido original en español del HTML
+  const originalContent = new Map();
+  
+  // Solo mantener traducciones al inglés (no duplicar el español del HTML)
   const translations = {
-    es: {
-      'lang.spanish': 'Español',
-      'lang.english': 'English',
-      'header.role': 'QA Senior • Automatización • Calidad de Datos • Rendimiento • Big Data',
-      'header.email': 'Correo:',
-      'header.phone': 'Teléfono:',
-      'header.city': 'Ciudad:',
-      'header.location': 'Quito, Ecuador',
-      'header.linkedin': 'LinkedIn:',
-      'header.linkedin.text': 'Visita mi perfil',
-      'header.lastupdate': 'Última actualización:',
-      'section.summary': 'Resumen',
-      'summary.text': 'QA Senior con experiencia en automatización de pruebas (API y End-to-End), gobierno y calidad de datos en entornos distribuidos, y validación de pipelines ETL. Experto en herramientas como Karate, Serenity BDD (Screenplay), Cucumber/Gherkin, Gradle y Selenium. Foco en diseño de pruebas por riesgo, cumplimiento de políticas de prueba y aseguramiento de integridad/consistencia de datos sobre Stratio. Experiencia en soporte sobre Oracle y gestión de incidencias en JIRA.',
-      'section.skills': 'Competencias técnicas',
-      'skills.automation': 'Automatización y QA',
-      'skills.languages': 'Lenguajes',
-      'skills.data': 'Datos y DB',
-      'skills.ide': 'IDE y Control de versiones',
-      'skills.cloud': 'Cloud y DevOps',
-      'skills.spoken': 'Idiomas',
-      'skills.english': 'Inglés Intermedio',
-      'section.experience': 'Experiencia',
-      'job1.title': 'QA Engineer (QA Semi - Senior) — NTT DATA / Banco Pichincha',
-      'job1.period': 'Agosto 2023 – Presente - 2 años 5 meses • Quito, EC',
-      'job1.desc1': 'Liderazgo técnico en aseguramiento de calidad, diseño e implementación de estrategias de pruebas orientadas a riesgos y objetivos del negocio.',
-      'job1.desc2': 'Automatización de pruebas API,E2E y Performance con Karate, Serenity BDD (Screenplay), Cucumber/Gherkin y k6.',
-      'job1.desc3': 'Aseguramiento de calidad de datos en Stratio Data; validación de ingesta, transformación y almacenamiento.',
-      'job1.desc4': 'Pruebas automatizadas para pipelines ETL y flujos en tiempo real; integridad y consistencia en entornos distribuidos.',
-      'job2.title': 'Ingeniero de Soporte y QA — Bayteq (Pronaca)',
-      'job2.period': 'Abril 2022 – Agosto - 1 año y 5 meses 2023 • Quito, EC',
-      'job2.desc1': 'Soporte a incidencias en base de datos y filtración de datos sobre Oracle 19c.',
-      'job2.desc2': 'Pruebas manuales y soporte a migraciones; gestión en JIRA.',
-      'job3.title': 'Programador Junior / QA Automatización — Devsu',
-      'job3.period': 'Enero 2022 – Marzo 2022 - 3 meses • Quito, EC',
-      'job3.desc1': 'Automatización de UI con Selenium (Java); diseño de casos de prueba.',
-      'job4.title': 'Soporte Técnico — Seguros Alianza',
-      'job4.period': 'Junio 2020 – Agosto 2020 - 3 meses - Pasantías • Quito, EC',
-      'job4.desc1': 'Soporte a usuarios; mantenimiento de software/hardware; carga de registros en BD.',
-      'job5.title': 'Programador Junior — Escuela Politécnica Nacional',
-      'job5.period': 'Junio 2019 – Mayo 2020 - 11 meses - Pasantías • Quito, EC',
-      'job5.desc1': 'Desarrollo de inventario, creación de ítems y corrección de colisiones (proyectos internos Unity).',
-      'section.education': 'Educación',
-      'edu1': 'Big Data y Visualizacion de Datos Masivos',
-      'edu1.inst': 'UNIR (Cuarto nivel - Cursando)',
-      'edu2': 'Ingeniería en Software',
-      'edu2.inst': 'Escuela Politécnica Nacional (Tercer nivel)',
-      'edu3': 'Diplomado: Data Science & Business Analytics (90h)',
-      'edu3.inst': 'Universidad de los Hemisferios',
-      'edu4': 'Bachillerato',
-      'edu4.inst': 'Instituto Superior Policía Nacional Sur',
-      'section.certifications': 'Certificaciones',
-      'cert.list.stratio.governance': 'Stratio Generative AI Data Governance',
-      'cert.list.stratio.processing': 'Stratio Generative AI Data Processing',
-      'cert.list.stratio.fabric': 'Stratio Generative AI Data Fabric Basics',
-      'cert.list.azure.ai900': 'Microsoft Certified: Azure AI Fundamentals (AI-900)',
-      'cert.list.azure.dp900': 'Microsoft Certified: Azure Data Fundamentals (DP-900)',
-      'cert.list.azure.az900': 'Microsoft Certified: Azure Fundamentals (AZ-900)',
-      'cert.list.scrum': 'SCRUM Foundation Professional Certificate',
-      'cert.link': 'Ver todos los certificados y evidencias »',
-      'cert.page.title': 'Certificados',
-      'cert.page.subtitle': 'Evidencias de certificaciones y cursos',
-      'cert.section.filter': 'Filtrar por categoría',
-      'cert.filter.all': 'Todos',
-      'cert.filter.azure': 'Azure',
-      'cert.filter.stratio': 'Stratio',
-      'cert.filter.qa': 'QA / Testing',
-      'cert.filter.curso': 'Cursos',
-      'cert.section.gallery': 'Galería',
-      'cert.footer.title': 'Certificados',
-      'cert.footer.back': '← Volver al CV',
-      'cert.issued': 'Emitido:',      'cert.obtained': 'Obtenida:',      'cert.issuer': 'Emisor:',
-      'cert.period': 'Período:',
-      'cert.btn.preview': '👁️ Vista previa',
-      'cert.btn.credential': '🔗 Credencial',
-      'cert.btn.download': '📥 Descargar PDF',
-      'cert.name.azure.az900': 'Microsoft Certified: Azure Fundamentals (AZ-900)',
-      'cert.name.azure.dp900': 'Microsoft Certified: Azure Data Fundamentals (DP-900)',
-      'cert.name.azure.ai900': 'Microsoft Certified: Azure AI Fundamentals (AI-900)',
-      'cert.name.stratio.fabric': 'Stratio Generative AI Data Fabric Basics (v14.1)',
-      'cert.name.stratio.governance': 'Stratio Generative AI Data Governance Certification (14.6)',
-      'cert.name.stratio.processing': 'Stratio Generative AI Data Processing (v14.1)',
-      'cert.name.diplomado': 'Diplomado: Data Science &amp; Business Analytics (90h)',
-      'course1': 'Azure Kubernets Service (AKS)',
-      'course2': 'Introduccion a UML, Lenguaje Unificado de Modelado',
-      'course3': 'Introducción a las Pruebas de Usabilidad, UX y Accesibilidad',
-      'course4': 'Automatización de pruebas web con Serenity BDD y Java',
-      'course5': 'SQL para Principiantes',
-      'course6': 'Testing exploratorio para agilizar tus pruebas',
-      'course7': 'K6: Pruebas de Rendimiento y Carga para Principiantes',
-      'course8': 'Karate DSL: API Automation and Performance from Zero to Hero',
-      'course9': 'Certified Tester ISTQB Foundation Level (CTFL)',
-      'course10': 'DevOps con Docker, Jenkins, Kubernetes, git, GitFlow CI y CD',
-      'course11': 'Software Testing desde Cero',
-      'course12': 'Create Interactive Dashboards with Streamlit and Python',
-      'course13': 'Getting Started with Power BI Desktop',
-      'course14': 'Strategy Implementation',
-      'cert.fullname.usability': 'Introducción a las Pruebas de Usabilidad, UX y Accesibilidad',
-      'cert.fullname.exploratory': 'Testing exploratorio para agilizar tus pruebas',
-      'cert.fullname.serenity': 'Automatización de pruebas web con Serenity BDD y Java',
-      'cert.fullname.softtesting': 'Software Testing desde Cero',
-      'cert.fullname.ctfl': 'Certified Tester ISTQB Foundation Level (CTFL)',
-      'cert.fullname.karate': 'Karate DSL: API Automation and Performance from Zero to Hero',
-      'cert.fullname.k6': 'K6: Pruebas de Rendimiento y Carga para Principiantes',
-      'cert.fullname.strategy': 'Strategy Implementation (6h)',
-      'cert.fullname.powerbi': 'Getting Started with Power BI Desktop (8h)',
-      'cert.fullname.streamlit': 'Create Interactive Dashboards with Streamlit and Python (12h)',
-      'cert.fullname.devops': 'DevOps con Docker, Jenkins, Kubernetes, git, GitFlow CI y CD — Udemy (14h)',
-      'cert.fullname.sql': 'SQL para Principiantes — Udemy (5h)',
-      'cert.fullname.aks': 'Azure Kubernetes Service (AKS) Todo sobre AKS — Udemy (6.5h)',
-      'cert.fullname.uml': 'Introduccion a UML, Lenguaje Unificado de Modelado — Udemy (2.5h)',
-      'section.courses': 'Formación continua',
-      'footer.text': 'CV para uso profesional'
-    },
     en: {
       'lang.spanish': 'Español',
       'lang.english': 'English',
-      'header.role': 'QA Senior • Automation • Data Quality • Performance • Big Data',
+      'header.role': 'QE Senior • Automation • Data Quality • AI Agents • MCP • Performance • Big Data',
       'header.email': 'Email:',
       'header.phone': 'Phone:',
       'header.city': 'City:',
@@ -125,7 +16,7 @@
       'header.linkedin.text': 'Visit my profile',
       'header.lastupdate': 'Last update:',
       'section.summary': 'Summary',
-      'summary.text': 'QA Senior with experience in test automation (API and End-to-End), data governance and quality in distributed environments, and ETL pipeline validation. Expert in tools such as Karate, Serenity BDD (Screenplay), Cucumber/Gherkin, Gradle and Selenium. Focus on risk-driven test design, test policy compliance and data integrity/consistency assurance on Stratio. Experience in Oracle support and JIRA incident management.',
+      'summary.text': 'Senior Quality Engineer (QE SR) at NTT DATA — position assumed since May 1, 2026. Consolidated experience in test automation (API and End-to-End), data governance and quality in distributed environments, and ETL pipeline validation. Expert in tools such as Karate, Serenity BDD (Screenplay), Cucumber/Gherkin, Gradle, Selenium, and k6 for performance testing. Currently leading the design and implementation of risk-oriented test strategies, automated testing pipelines, MCP (Model Context Protocol) frameworks, and automation solutions that integrate conversational AI agents for support, testing, and continuous improvement. Focus on ensuring data integrity and consistency on Stratio, test policy compliance, CI/CD, Python, integration with ML/DevOps teams, and results analysis to ensure quality and scalability. Focused on driving efficiency and quality through intelligent and automated solutions.',
       'section.skills': 'Technical Skills',
       'skills.automation': 'QA & Automation',
       'skills.languages': 'Languages',
@@ -135,25 +26,34 @@
       'skills.spoken': 'Languages',
       'skills.english': 'Intermediate English',
       'section.experience': 'Experience',
-      'job1.title': 'QA Engineer (QA Semi - Senior) — NTT DATA / Banco Pichincha',
-      'job1.period': 'August 2023 – Present - 2 years 5 months • Quito, EC',
+      'job1.title': 'QE Senior (QE SR) — NTT DATA / Banco Pichincha',
+      'job1.period': 'May 2026 – Present • Quito, EC',
       'job1.desc1': 'Technical leadership in quality assurance, design and implementation of risk-oriented test strategies aligned with business objectives.',
-      'job1.desc2': 'API, E2E and Performance test automation with Karate, Serenity BDD (Screenplay), Cucumber/Gherkin and k6.',
-      'job1.desc3': 'Data quality assurance in Stratio Data; validation of ingestion, transformation and storage.',
-      'job1.desc4': 'Automated testing for ETL pipelines and real-time flows; integrity and consistency in distributed environments.',
-      'job2.title': 'Support Engineer & QA — Bayteq (Pronaca)',
-      'job2.period': 'April 2022 – August 2023 - 1 year 5 months • Quito, EC',
-      'job2.desc1': 'Support for database incidents and data filtering on Oracle 19c.',
-      'job2.desc2': 'Manual testing and migration support; JIRA management.',
-      'job3.title': 'Junior Programmer / QA Automation — Devsu',
-      'job3.period': 'January 2022 – March 2022 - 3 months • Quito, EC',
-      'job3.desc1': 'UI automation with Selenium (Java); test case design.',
-      'job4.title': 'Technical Support — Seguros Alianza',
-      'job4.period': 'June 2020 – August 2020 - 3 months - Internship • Quito, EC',
-      'job4.desc1': 'User support; software/hardware maintenance; database record upload.',
-      'job5.title': 'Junior Programmer — Escuela Politécnica Nacional',
-      'job5.period': 'June 2019 – May 2020 - 11 months - Internship • Quito, EC',
-      'job5.desc1': 'Development of inventory, item creation and collision correction (internal Unity projects).',
+      'job1.desc2': 'Creation and orchestration of AI agents and MCP (Model Context Protocol) frameworks for intelligent test automation and support.',
+      'job1.desc3': 'API, E2E and Performance test automation with Karate, Serenity BDD (Screenplay), Cucumber/Gherkin and k6.',
+      'job1.desc4': 'Data quality assurance in Stratio Data; validation of ingestion, transformation and storage.',
+      'job1.desc5': 'Implementation of automated testing pipelines with CI/CD integration, results analysis and continuous improvement.',
+      'job1.desc6': 'Collaboration with ML/DevOps teams to ensure quality, scalability and efficiency in software solutions.',
+      'job2.title': 'QA Engineer (QA Semi - Senior) — NTT DATA / Banco Pichincha',
+      'job2.period': 'August 2023 – April 2026 • 2 years 9 months • Quito, EC',
+      'job2.desc1': 'Design and implementation of risk-oriented test strategies aligned with business objectives.',
+      'job2.desc2': 'API, E2E and Performance test automation with Karate, Serenity BDD (Screenplay), Cucumber/Gherkin and k6.',
+      'job2.desc3': 'Data quality assurance in Stratio Data; validation of ingestion, transformation and storage.',
+      'job2.desc4': 'Automated testing for ETL pipelines and real-time flows; integrity and consistency in distributed environments.',
+      'job2.desc5': 'Incident management and tracking in JIRA; collaboration with development teams for defect resolution.',
+      'job3.title': 'Support Engineer & QA — Bayteq (Pronaca)',
+      'job3.period': 'April 2022 – August 2023 • 1 year 5 months • Quito, EC',
+      'job3.desc1': 'Support for database incidents and data filtering on Oracle 19c.',
+      'job3.desc2': 'Manual testing and migration support; JIRA management.',
+      'job4.title': 'Junior Programmer / QA Automation — Devsu',
+      'job4.period': 'January 2022 – March 2022 • 3 months • Quito, EC',
+      'job4.desc1': 'UI automation with Selenium (Java); test case design.',
+      'job5.title': 'Technical Support — Seguros Alianza',
+      'job5.period': 'June 2020 – August 2020 • 3 months (Internship) • Quito, EC',
+      'job5.desc1': 'User support; software/hardware maintenance; database record upload.',
+      'job6.title': 'Junior Programmer — Escuela Politécnica Nacional',
+      'job6.period': 'June 2019 – May 2020 • 11 months (Internship) • Quito, EC',
+      'job6.desc1': 'Development of inventory, item creation and collision correction (internal Unity projects).',
       'section.education': 'Education',
       'edu1': 'Big Data and Massive Data Visualization',
       'edu1.inst': 'UNIR (Fourth level - In progress)',
@@ -230,14 +130,47 @@
     }
   };
 
-  function applyTranslations(lang){
-    const map = translations[lang] || translations.es;
+  /**
+   * Guarda el contenido original en español del DOM
+   * Se ejecuta solo una vez al cargar la página
+   */
+  function cacheOriginalContent() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if(!key) return;
-      const text = map[key];
-      if(typeof text === 'undefined') return;
-      if(el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea'){
+      if (!key) return;
+      
+      // Guardar el contenido original del HTML (en español)
+      if (el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea') {
+        originalContent.set(key, el.placeholder);
+      } else {
+        originalContent.set(key, el.textContent);
+      }
+    });
+  }
+
+  /**
+   * Aplica las traducciones según el idioma seleccionado
+   * @param {string} lang - Código del idioma ('es' o 'en')
+   */
+  function applyTranslations(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!key) return;
+      
+      let text;
+      if (lang === 'es') {
+        // Restaurar contenido original del HTML
+        text = originalContent.get(key);
+      } else if (lang === 'en') {
+        // Aplicar traducción al inglés
+        text = translations.en[key];
+      }
+      
+      // Si no hay traducción disponible, mantener el contenido actual
+      if (typeof text === 'undefined') return;
+      
+      // Aplicar el texto según el tipo de elemento
+      if (el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea') {
         el.placeholder = text;
       } else {
         el.textContent = text;
@@ -245,17 +178,33 @@
     });
   }
 
-  function setActiveLangButton(lang){
+  /**
+   * Actualiza el estado visual de los botones de idioma
+   * @param {string} lang - Código del idioma activo
+   */
+  function setActiveLangButton(lang) {
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    const saved = localStorage.getItem('site-lang') || 'es';
-    applyTranslations(saved);
-    setActiveLangButton(saved);
+  // Inicialización al cargar el DOM
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Guardar el contenido original en español del HTML
+    cacheOriginalContent();
+    
+    // 2. Obtener el idioma guardado o usar español por defecto
+    const savedLang = localStorage.getItem('site-lang') || 'es';
+    
+    // 3. Aplicar traducciones si es necesario
+    if (savedLang !== 'es') {
+      applyTranslations(savedLang);
+    }
+    
+    // 4. Actualizar botones de idioma
+    setActiveLangButton(savedLang);
 
+    // 5. Configurar listeners para cambio de idioma
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const lang = btn.dataset.lang || 'es';
